@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <title>POS System - Customer Form</title>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6a6b6e;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="Customer.html">
+                    <img src="assets/img/logo.png" alt="Logo" width="184.3125" height="48.1875">
+                </a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Customer.html">Customer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="Item.html">Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Order.html">Order</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+    </header>
+
+    <section class="container-fluid">
+        <div class="rounded-3 p-3" style="background-color: #a6b9eb; margin-top: 30px;">
+            <h1 class="text-center mb-3"><i class="bi bi-people-fill m-2"></i>Customer Form</h1>
+        </div>
+
+          <div class="row g-3 align-items-center pb-3 justify-content-between">
+                <div class="col-12 col-md-6 col-xl-6">
+                    <div class="input-group mb-3" style="height: 10px;">
+                        <input type="text" id="txtSearchCusID" class="form-control" placeholder="Search Customer"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-primary" type="button" id="button-addon2"><i
+                                class="bi bi-search m-2"></i>Search</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 col-xl-6">
+                    <button type="button" class="btn btn-danger mt-2" data-bs-toggle="modal" 
+                    data-bs-target="#removeCustomer"><i class="bi bi-person-plus-fill m-2"></i>Delete Customer</button>
+                    <button type="button" class="btn btn-secondary mt-2"><i class="bi bi-backspace m-2"></i>Clear</button>
+                    <button id="btnSave" type="button" class="btn btn-success mt-2" data-bs-toggle="modal"
+                        data-bs-target="#addCustomer"><i class="bi bi-person-plus-fill m-2"></i>Add Customer</button>      
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-6">
+                    <label class="form-label" for="txtCusID">Customer ID</label>
+                    <input class="form-control" id="txtCusID" placeholder="Customer ID" type="text">
+                </div>
+                <div class="mb-3 col-6">
+                    <label class="form-label" for="txtCusName">Customer Name</label>
+                    <input class="form-control" id="txtCusName" placeholder="Customer Name" type="text">
+                </div>
+                <div class="mb-3 col-6">
+                    <label class="form-label" for="txtCusAddress">Customer Address</label>
+                    <input class="form-control" id="txtCusAddress" placeholder="Customer Address" type="text">
+                </div>
+                <div class="mb-3 col-6">
+                    <label class="form-label" for="txtCusTP">Customer Telephone Number</label>
+                    <input class="form-control" id="txtCusTP" placeholder="Customer Telephone Number" type="text">
+                </div>
+            </div>
+
+            <div class="row align-items-center pt-3">
+                <div class="col-12 mt-2">
+                    <div class="table-responsive" style="height: 70vh;">
+                        <table class="table table-primary table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Customer ID</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Telephone</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customerTB">
+                                    
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+    <script src="db/DB.js"></script>
+    <script>
+    $("#btnSave").click(function(){
+        saveCustomer();
+        clearAll();
+        loadAllCustomers();
+ }); 
+
+ $("#button-addon2").click(function () {
+        var searchID = $("#txtSearchCusID").val();
+
+        var response = searchCustomer(searchID);
+        if (response) {
+            $("#txtCusID").val(response.id);
+            $("#txtCusName").val(response.name);
+            $("#txtCusAddress").val(response.address);
+            $("#txtCusTP").val(response.salary);
+        }else{
+            clearAll();
+            alert("No Such a Customer");
+        }
+    });
+
+ function loadAllCustomers() {
+        $("#customerTB").empty();
+        for (var i of customerDB) {
+            let row = `<tr><td>${i.id}</td><td>${i.name}</td><td>${i.address}</td><td>${i.salary}</td></tr>`;
+            $("#customerTB").append(row);
+        }
+    }
+
+
+
+ function saveCustomer(){
+    let customerID = $("#txtCusID").val();
+        let customerName = $("#txtCusName").val();
+        let customerAddress = $("#txtCusAddress").val();
+        let customerSalary = $("#txtCusTP").val();
+
+        //create Object
+        var customerObject = {
+            id: customerID,
+            name: customerName,
+            address: customerAddress,
+            salary: customerSalary
+        };
+
+        customerDB.push(customerObject);
+    }
+
+    function searchCustomer(id) {
+        for (let i = 0; i < customerDB.length; i++) {
+            if (customerDB[i].id == id) {
+                return customerDB[i];
+            }
+        }
+    }
+
+    function deleteCustomer(){
+       
+    }
+
+    function updateCustomer(){
+        
+    }
+
+
+    const cusIDRegEx = /^(C00-)[0-9]{1,3}$/;
+    const cusNameRegEx = /^[A-z ]{5,20}$/;
+    const cusAddressRegEx = /^[0-9/A-z. ,]{7,}$/;
+    const cusSalaryRegEx = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
+
+
+    $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusSalary').on('keydown', function (eventOb) {
+        if (eventOb.key == "Tab") {
+            eventOb.preventDefault(); // stop execution of the button
+        }
+    });
+
+    $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusSalary').on('blur', function () {
+        formValid();
+    });
+
+    //focusing events
+    $("#txtCusID").on('keyup', function (eventOb) {
+        setButton();
+        if (eventOb.key == "Enter") {
+            checkIfValid();
+        }
+
+        if (eventOb.key == "Control") {
+            var typedCustomerID = $("#txtCusID").val();
+            var srcCustomer = searchCustomerFromID(typedCustomerID);
+            $("#txtCusID").val(srcCustomer.getCustomerID());
+            $("#txtCusName").val(srcCustomer.getCustomerName());
+            $("#txtCusAddress").val(srcCustomer.getCustomerAddress());
+            $("#txtCusSalary").val(srcCustomer.getCustomerSalary());
+        }
+
+
+    });
+
+    $("#txtCusName").on('keyup', function (eventOb) {
+        setButton();
+        if (eventOb.key == "Enter") {
+            checkIfValid();
+        }
+    });
+
+    $("#txtCusAddress").on('keyup', function (eventOb) {
+        setButton();
+        if (eventOb.key == "Enter") {
+            checkIfValid();
+        }
+    });
+
+    $("#txtCusSalary").on('keyup', function (eventOb) {
+        setButton();
+        if (eventOb.key == "Enter") {
+            checkIfValid();
+        }
+    });
+    // focusing events end
+    $("#btnCustomer").attr('disabled', true);
+
+    function clearAll() {
+        $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusSalary').val("");
+        $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusSalary').css('border', '2px solid #ced4da');
+        $('#txtCusID').focus();
+        $("#btnCustomer").attr('disabled', true);
+        loadAllCustomers();
+        $("#lblcusid,#lblcusname,#lblcusaddress,#lblcussalary").text("");
+    }
+
+    function formValid() {
+        var cusID = $("#txtCusID").val();
+        $("#txtCusID").css('border', '2px solid green');
+        $("#lblcusid").text("");
+        if (cusIDRegEx.test(cusID)) {
+            var cusName = $("#txtCusName").val();
+            if (cusNameRegEx.test(cusName)) {
+                $("#txtCusName").css('border', '2px solid green');
+                $("#lblcusname").text("");
+                var cusAddress = $("#txtCusAddress").val();
+                if (cusAddressRegEx.test(cusAddress)) {
+                    var cusSalary = $("#txtCusSalary").val();
+                    var resp = cusSalaryRegEx.test(cusSalary);
+                    $("#txtCusAddress").css('border', '2px solid green');
+                    $("#lblcusaddress").text("");
+                    if (resp) {
+                        $("#txtCusSalary").css('border', '2px solid green');
+                        $("#lblcussalary").text("");
+                        return true;
+                    } else {
+                        $("#txtCusSalary").css('border', '2px solid red');
+                        $("#lblcussalary").text("Cus Salary is a required field : Pattern 100.00 or 100");
+                        return false;
+                    }
+                } else {
+                    $("#txtCusAddress").css('border', '2px solid red');
+                    $("#lblcusaddress").text("Cus Name is a required field : Mimum 7");
+                    return false;
+                }
+            } else {
+                $("#txtCusName").css('border', '2px solid red');
+                $("#lblcusname").text("Cus Name is a required field : Mimimum 5, Max 20, Spaces Allowed");
+                return false;
+            }
+        } else {
+            $("#txtCusID").css('border', '2px solid red');
+            $("#lblcusid").text("Cus ID is a required field : Pattern C00-000");
+            return false;
+        }
+    }
+
+    function checkIfValid() {
+        var cusID = $("#txtCusID").val();
+        if (cusIDRegEx.test(cusID)) {
+            $("#txtCusName").focus();
+            var cusName = $("#txtCusName").val();
+            if (cusNameRegEx.test(cusName)) {
+                $("#txtCusAddress").focus();
+                var cusAddress = $("#txtCusAddress").val();
+                if (cusAddressRegEx.test(cusAddress)) {
+                    $("#txtCusSalary").focus();
+                    var cusSalary = $("#txtCusSalary").val();
+                    var resp = cusSalaryRegEx.test(cusSalary);
+                    if (resp) {
+                        let res = confirm("Do you really need to add this Customer..?");
+                        if (res) {
+                            saveCustomer();
+                            clearAll();
+                        }
+                    } else {
+                        $("#txtCusSalary").focus();
+                    }
+                } else {
+                    $("#txtCusAddress").focus();
+                }
+            } else {
+                $("#txtCusName").focus();
+            }
+        } else {
+            $("#txtCusID").focus();
+        }
+    }
+
+    function setButton() {
+        let b = formValid();
+        if (b) {
+            $("#btnCustomer").attr('disabled', false);
+        } else {
+            $("#btnCustomer").attr('disabled', true);
+        }
+    }
+
+    $('#btnCustomer').click(function () {
+        checkIfValid();
+    });
+  
+    </script>
+
+</body>
+</html>
