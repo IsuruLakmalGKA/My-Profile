@@ -1,0 +1,274 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    position: fixed;
+    background-color: #1c1c1c;
+    width: 100%;
+    height: 65px;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 25);
+}
+
+.section-1 {
+    background-image: url("image/back.png");
+    background-position: center;
+    height: 700px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-size: cover;
+    display: flex;
+}
+
+.top {
+    position: relative;
+    margin-top: 23px;
+    margin-right: 0px;
+    float: left;
+    padding-right: 35px;
+    padding-left: 35px;
+}
+
+.nav-Hfonts {
+    font-family: "Droid Sans Mono", monospace;
+    position: relative;
+    font-size: 18px;
+    color: #f2ff00;
+    text-decoration: none;
+
+}
+
+.nav-Hfonts:hover {
+    display: inline-block;
+    text-transform: uppercase;
+    animation: adel 1s ease-in-out infinite;
+}
+
+.nav-fonts {
+    font-family: "Droid Sans Mono", monospace;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-fonts:hover {
+    display: inline-block;
+    text-transform: uppercase;
+    animation: adel 1s ease-in-out infinite;
+}
+
+@keyframes adel {
+    0% {
+        transform: translateY(0px);
+    }
+    20% {
+        transform: translateY(-20px);
+    }
+
+}
+
+.logo {
+    position: relative;
+    margin-bottom: 20px;
+    margin-right: 20px;
+
+}
+
+.wrapper-full {
+    margin-left: 550px;
+    margin-top: 200px;
+
+}
+
+.wrapper {
+    font-family: "Droid Sans Mono", monospace;
+    font-weight: normal;
+    display: inline-flex;
+    align-content: space-between;
+
+}
+
+.wrapper .static-txt {
+    font-size: 60px;
+}
+
+.section-1 {
+    color: #f2ff00;
+}
+
+.static-txt-2 {
+    color: white;
+    margin-left: 30px;
+}
+
+.wrapper-full .dynamic-txt {
+    /*margin-left: 15px;*/
+    font-family: "Droid Sans Mono", monospace;
+    margin-top: 15px;
+    font-size: 50px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+}
+
+.dynamic-txt li {
+    color: #f0f0f0;
+    list-style: none;
+    /*font-size: 60px;*/
+    font-weight: normal;
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(3) infinite;
+
+}
+
+@keyframes slide {
+    100% {
+        top: -150px;
+    }
+}
+
+.dynamic-txt li span {
+    position: relative;
+}
+
+.dynamic-txt li span:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #1c1c1c;
+    border-left: 2px solid #f2ff00;
+    animation: typing 2s steps(15) infinite;
+
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+.icon-tab {
+    margin-top: 60px;
+    margin-left: 550px;
+
+}
+
+.icon {
+    width: 480px;
+    height: 80px;
+    /*border: 2px solid red;*/
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 8px;
+}
+
+.icon > div {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 25);
+}
+
+.imge {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.icon > div {
+    background-color: slategray;
+    border-radius: 20px;
+}
+
+.icon > div:nth-child(1):hover {
+    background-color: #9f9f9f;
+    transition-duration: 0.5s;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+
+.icon > div:nth-child(2):hover {
+    background-color: #ff9b69;
+    transition-duration: 1s;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.icon > div:nth-child(3):hover {
+    background-color: #9b69ff;
+    transition-duration: 1s;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.icon > div:nth-child(4):hover {
+    background-color: #74daff;
+    transition-duration: 1s;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.icon > div:nth-child(5):hover {
+    background-color: #28289f;
+    transition-duration: 1s;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.icon > div:nth-child(6):hover {
+    background-color: #4eff1d;
+    transition-duration: 1s;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+main > section > section > h1{
+    font-family: "Droid Sans Mono", monospace;
+    font-weight: 400;
+    color: #f2ff00;
+    text-align: center;
+    font-size: 60px;
+    line-height: 5px;
+    text-decoration: none;
+}
+main > section > section > h2{
+    font-family: "Droid Sans Mono", monospace;
+    font-weight: 400;
+    color: black;
+    text-align: center;
+    font-size: 60px;
+    text-decoration: none;
+    letter-spacing: 6px;
+    opacity: 50%;
+    line-height: 1px;
+}
+/*h1 {
+    position: relative;
+    font-family: "Source Code Pro";
+    font-weight: 400;
+    color: #f2ff00;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+}*/
+
+/*h1.shadow {
+    position: relative;
+    font-family: "Source Code Pro";
+    font-style: normal;
+    font-weight: 400;
+    color: black;
+    Align: Left;
+    Vertical-align: Top;
+    letter-spacing: 8px;
+    line-height: 1px;
+    opacity: 50%;
+    text-decoration: none;
+}*/
