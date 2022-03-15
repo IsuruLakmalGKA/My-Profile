@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -33,8 +34,11 @@ header {
     float: left;
     padding-right: 35px;
     padding-left: 35px;
-}
 
+}
+.nav-links:active{
+    transition: scroll;
+}
 .nav-Hfonts {
     font-family: "Droid Sans Mono", monospace;
     position: relative;
@@ -228,26 +232,47 @@ header {
     border-radius: 20px;
     cursor: pointer;
 }
-
+.section-2{
+    margin-top: 100px;
+}
 main > section > section > h1{
     font-family: "Droid Sans Mono", monospace;
-    font-weight: 400;
+    font-weight: bolder;
     color: #f2ff00;
     text-align: center;
     font-size: 60px;
-    line-height: 5px;
+    line-height: 1px;
     text-decoration: none;
 }
 main > section > section > h2{
     font-family: "Droid Sans Mono", monospace;
-    font-weight: 400;
+    font-weight: bolder;
     color: black;
     text-align: center;
     font-size: 60px;
     text-decoration: none;
-    letter-spacing: 6px;
+    letter-spacing: 4px;
     opacity: 50%;
     line-height: 1px;
+}
+main > section > section > section >h3{
+    font-size: 25px;
+    font-family: "Droid Sans Mono", monospace;
+    color: white;
+
+}
+
+main > section > section > section > section > p{
+    float: left;
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: "Droid Sans Mono", monospace;
+    color: white;
+
+}
+main > section > section > section > section > #p2{
+    font-weight: bold;
+
 }
 /*h1 {
     position: relative;
