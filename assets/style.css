@@ -91,8 +91,8 @@ header {
 }
 
 .wrapper {
-    font-family: "Droid Sans Mono", monospace;
-    font-weight: normal;
+    font-family: Ubuntu;
+    font-weight: bold;
     display: inline-flex;
     align-content: space-between;
 
@@ -113,7 +113,8 @@ header {
 
 .wrapper-full .dynamic-txt {
     /*margin-left: 15px;*/
-    font-family: "Droid Sans Mono", monospace;
+    font-family: Ubuntu;
+    font-weight: bold;
     margin-top: 15px;
     font-size: 50px;
     height: 50px;
@@ -169,7 +170,7 @@ header {
 
 .icon {
     width: 480px;
-    height: 80px;
+    height: 70px;
     /*border: 2px solid red;*/
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -177,7 +178,7 @@ header {
 }
 
 .icon > div {
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 25);
+    filter: drop-shadow(0px 0px 3px #ffffff);
 }
 
 .imge {
@@ -186,57 +187,64 @@ header {
 }
 
 .icon > div {
-    background-color: slategray;
+    background-color: #1c1c1c;
     border-radius: 20px;
 }
 
 .icon > div:nth-child(1):hover {
-    background-color: #9f9f9f;
+    background-color: #28DEDE;
     transition-duration: 0.5s;
     border-radius: 20px;
+    filter: drop-shadow(0px 0px 20px #ffffff);
     cursor: pointer;
 
 }
 
 .icon > div:nth-child(2):hover {
-    background-color: #ff9b69;
-    transition-duration: 1s;
+    background-color: #E38312;
+    transition-duration: 0.5s;
     border-radius: 20px;
+    filter: drop-shadow(0px 0px 20px #ffffff);
     cursor: pointer;
 }
 
 .icon > div:nth-child(3):hover {
-    background-color: #9b69ff;
-    transition-duration: 1s;
+    background-color: #130FDD;
+    transition-duration: 0.5s;
     border-radius: 20px;
+    filter: drop-shadow(0px 0px 20px #ffffff);
     cursor: pointer;
 }
 
 .icon > div:nth-child(4):hover {
-    background-color: #74daff;
-    transition-duration: 1s;
+    background-color: #000000;
+    transition-duration: 0.5s;
     border-radius: 20px;
+    filter: drop-shadow(0px 0px 20px #ffffff);
     cursor: pointer;
 }
 
 .icon > div:nth-child(5):hover {
     background-color: #28289f;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     border-radius: 20px;
+    filter: drop-shadow(0px 0px 20px #ffffff);
     cursor: pointer;
 }
 
 .icon > div:nth-child(6):hover {
     background-color: #4eff1d;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     border-radius: 20px;
+    filter: drop-shadow(0px 0px 20px #ffffff);
     cursor: pointer;
 }
 .section-2{
     margin-top: 100px;
 }
 main > section > section > h1{
-    font-family: "Droid Sans Mono", monospace;
+    position: relative;
+    font-family: Ubuntu;
     font-weight: bolder;
     color: #f2ff00;
     text-align: center;
@@ -245,15 +253,19 @@ main > section > section > h1{
     text-decoration: none;
 }
 main > section > section > h2{
-    font-family: "Droid Sans Mono", monospace;
+    position: relative;
+    font-family: Ubuntu;
     font-weight: bolder;
-    color: black;
+    color: #ffffff;
     text-align: center;
     font-size: 60px;
     text-decoration: none;
     letter-spacing: 4px;
-    opacity: 50%;
+    opacity: 10%;
     line-height: 1px;
+}
+main > section > section > .details-pan{
+    margin-left: 140px;
 }
 main > section > section > section >h3{
     font-size: 25px;
@@ -263,8 +275,8 @@ main > section > section > section >h3{
 }
 
 main > section > section > section > section > p{
-    float: left;
     margin-left: 20px;
+    margin-top: 40px;
     font-size: 15px;
     font-family: "Droid Sans Mono", monospace;
     color: white;
@@ -272,7 +284,60 @@ main > section > section > section > section > p{
 }
 main > section > section > section > section > #p2{
     font-weight: bold;
+    margin-top: -328px;
+    margin-left: 170px;
 
+}
+.img-1{
+    margin-top: -400px;
+    margin-left: 700px ;
+    border-radius: 175px;
+    cursor: pointer;
+}
+.img-1:hover{
+    transition-duration: 200ms;
+    filter: drop-shadow(0px 0px 4px #ffff);
+
+}
+main > section > section > section > button{
+    position: relative;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    color: white;
+    border-color: yellow;
+    background-color: #1c1e23;
+    margin-left: 300px;
+    margin-top: 20px;
+    font-family: ubuntu;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+main > section > section > section > button:hover{
+    transition-duration: 0.25s;
+    color: #1c1e23;
+    background-color: yellow;
+}
+main > section > section > section > section > button{
+    position: relative;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    color: white;
+    border-color: yellow;
+    background-color: #1c1e23;
+    margin-left: 780px;
+    margin-top: 20px;
+    font-family: ubuntu;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+main > section > section > section > section > button:hover{
+    transition-duration: 0.25s;
+    color: #1c1e23;
+    background-color: yellow;
 }
 /*h1 {
     position: relative;
