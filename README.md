@@ -44,7 +44,7 @@
 - Site Map : [Click Here](https://www.gloomaps.com/nfzc9C2aWT)
 - Wireframe : [Click Here](https://wireframe.cc/pro/pp/da44f8bd4516987)
 - Mockup : [Click Here](https://www.figma.com/file/g2kYJpUuH6RpLOBsQYN6HS/Untitled?version-id=1539721373&node-id=1%3A2&viewport=241%2C48%2C0.25)
-- Github page : [Click Here](https://isurugithu.github.io/My_profile/)
+- Github page : [Click Here](https://isurugithu.github.io/My-Profile/)
 
 ## :link: **Other Links**
 - LinkedIn : [Click Here](http://www.linkedin.com/in/isurulakmal99)
