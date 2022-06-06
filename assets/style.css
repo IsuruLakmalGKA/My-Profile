@@ -733,23 +733,108 @@ main > section > section > h2 {
     margin-top: 150px;
 }
 
-.contact-container{
+.contact-container {
+    position: relative;
+    left: 5%;
     transform: translateY(5%);
     margin: auto;
     width: 90%;
     height: 700px;
     /*background-color: greenyellow;*/
 }
+.contact-container > .contact-timeline-button > section{
+    position: relative;
+    left: 20%;
+}
 
-.contact-container > .contact-timeline-button{
+.contact-container > .contact-timeline-button {
     float: right;
     margin-left: auto;
     width: 35%;
     height: 100%;
-    background-color: #0a58ca;
+    /*background-color: #0a58ca;*/
 }
 
-.contact-container > .contact-timeline{
+.contact-timeline-button > .c-t-b-callBtn {
+    cursor: pointer;
+    width: 250px;
+    height: 200px;
+    background-color: #1c1c1c;
+    margin-top: 100px;
+    border-radius: 20px;
+    filter: drop-shadow(2px 2px 10px black);
+}
+.contact-timeline-button > .c-t-b-callBtn:hover {
+    width: 250px;
+    height: 200px;
+    background-color: #151515;
+    margin-top: 100px;
+    border-radius: 20px;
+    filter: drop-shadow(2px 2px 10px black);
+}
+.contact-timeline-button > .c-t-b-callBtn > p{
+    position: relative;
+    top: 15%;
+}
+.contact-timeline-button > .c-t-b-callBtn > p:nth-child(1) {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    font-size: 30px;
+    font-family: Ubuntu;
+    font-weight: bold;
+}
+.contact-timeline-button > .c-t-b-callBtn > p:nth-child(2) {
+    text-align: center;
+    color: white;
+}
+
+
+.contact-timeline-button > .c-t-b-MailBtn {
+    cursor: pointer;
+    width: 250px;
+    height: 200px;
+    background-color: #1c1c1c;
+    border-radius: 20px;
+    filter: drop-shadow(2px 2px 10px black);
+}
+.contact-timeline-button > .c-t-b-MailBtn:hover {
+    width: 250px;
+    height: 200px;
+    background-color: #151515;
+    border-radius: 20px;
+    filter: drop-shadow(2px 2px 10px black);
+}
+
+.contact-timeline-button > .c-t-b-MailBtn > p:nth-child(1) {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-family: Ubuntu;
+}
+
+.contact-timeline-button > .c-t-b-MailBtn > p:nth-child(2) {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: Ubuntu;
+    font-weight: bold;
+}
+
+.contact-timeline-button > .c-t-b-MailBtn > p:nth-child(3) {
+    text-align: center;
+    color: white;
+    font-family: Ubuntu;
+}
+.contact-timeline-button > .c-t-b-MailBtn > img{
+    position: relative;
+    left: 7%;
+    bottom: 20%;
+}
+
+
+
+.contact-container > .contact-timeline {
     float: left;
     width: 65%;
     max-width: 700px;
@@ -760,20 +845,21 @@ main > section > section > h2 {
     filter: drop-shadow(2px 2px 10px black);
 }
 
-.contact-container > .contact-timeline > form > .contact-name-and-number{
+.contact-container > .contact-timeline > form > .contact-name-and-number {
     width: 80%;
     height: 20px;
     margin: auto;
 }
 
-.contact-container > .contact-timeline > form > .contact-name-and-number > input:nth-child(odd){
+.contact-container > .contact-timeline > form > .contact-name-and-number > input:nth-child(odd) {
     float: left;
 }
-.contact-container > .contact-timeline > form > .contact-name-and-number > input:nth-child(even){
+
+.contact-container > .contact-timeline > form > .contact-name-and-number > input:nth-child(even) {
     float: right;
 }
 
-.contact-container > .contact-timeline > form > .contact-others-inputs{
+.contact-container > .contact-timeline > form > .contact-others-inputs {
     width: 80%;
     transform: translateY(50px);
     height: auto;
@@ -783,7 +869,7 @@ main > section > section > h2 {
     /*background-color: red;*/
 }
 
-.contact-container > section > form > section > input, .contact-container > section > form > section > textarea{
+.contact-container > section > form > section > input, .contact-container > section > form > section > textarea {
     border: 0px;
     margin: 10px 0px;
     padding: 7px;
@@ -796,7 +882,7 @@ main > section > section > h2 {
     box-shadow: 0px 2px 2px -1px #333333;
 }
 
-.contact-container > section > form > section > button{
+.contact-container > section > form > section > button {
     height: 25px;
     margin-bottom: 75px;
     border: 0px;
@@ -808,6 +894,67 @@ main > section > section > h2 {
     color: yellow;
     background-color: #161414;
     box-shadow: 0px 2px 8px black;
+}
+
+footer > section > hr{
+    position: relative;
+    margin: auto;
+    width: 75%;
+}
+footer > section > section{
+    width: 100%;
+    height: 450px;
+    text-align: center;
+}
+footer > section > section > img{
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 150px;
+}
+footer > section > section > span{
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+footer > section > p{
+    position: relative;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 100px;
+}
+footer > section > .three-Btns{
+    position: fixed;
+    right: 3%;
+    bottom: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 25px;
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: black;
+    font-size: 22px;
+    font-weight: bolder;
+}
+footer > section > .gotoUp{
+    position: fixed;
+    right: 3%;
+    bottom: 5%;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 25px;
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: black;
+    font-size: 22px;
+    font-weight: bolder;
 }
 /*h1 {
     position: relative;
