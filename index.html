@@ -40,15 +40,27 @@
             <div class="top"><a href="#portfolio" class="nav-fonts">PORTFOLIO</a></div>
             <div class="top"><a href="#activities" class="nav-fonts">ACTIVITIES</a></div>
             <div class="top"><a href="#contact" class="nav-fonts">CONTACT</a></div>
-
-
         </section>
         <img style="float: right" src="assets/icon/icon.png" width="75px" class="logo">
 
+        <button class="btn-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
 </header>
 
+<nav class="mobile-nav">
+    <a href="">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#education">EDUCATION</a>
+    <a href="#portfolio">PORTFOLIO</a>
+    <a href="#activities">ACTIVITIES</a>
+    <a href="#contact">CONTACT</a>
+</nav>
 
 <main>
     <section>
@@ -147,13 +159,21 @@
                     <button>Download CV</button>
                 </div>
             </section>
-            <section class="about-me-view-more-btn">
-                <button>View more</button>
+
+            <section id="read-more" class="about-me-view-more-btn">
+                <button>Read more</button>
             </section>
+            <section id="more" class="read-more-sec">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum tincidunt mi, at viverra lorem tempus ut. Fusce volutpat lobortis rhoncus. Aenean sed metus lectus. Curabitur ac mi pulvinar ante tincidunt condimentum. Proin vitae augue eu urna eleifend eleifend non at nibh. Donec egestas eget enim congue pretium. Proin pulvinar rhoncus luctus.</p>
+                <p>Nulla congue odio consequat, blandit elit eget, condimentum tortor. Nunc sodales, quam at mollis gravida, dolor quam placerat diam, at viverra augue nulla et felis. Ut eu elementum lacus. Nullam et elit lorem. Aliquam porttitor ipsum sit amet ex pretium, quis efficitur nunc tristique. Sed et nibh velit. Praesent a sem id nisi bibendum faucibus vel nec massa. Duis maximus sed eros non rutrum. Nullam pretium sem felis, in elementum ligula euismod in. Vivamus ex nibh, dapibus non neque ac, scelerisque lacinia neque. Etiam iaculis arcu id egestas pretium. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                <p> Quisque ultrices frinea dictumst. Pellentesque dictum sapien et ultrices mollis. Pellentesque quis risus consequat, vulputate diam vitae, auctor felis. Donec porttitor lectus ac lacus faucibus mollis. Cras gravida ultrices ipsum a feugiat. Pellentesque sollicitudin, lectus eu suscipit ultricies, erat turpis interdum neque, quis placerat sapien leo nec est. Cras vehicula varius vestibulum. Etiam mattis, ligula eget vulputate hendrerit, magna felis malesuada felis, sed cursus mauris nulla eget quam. Phasellus at risus interdum, tincidunt ex non, consequat dui.</p>
+            </section>
+
+
         </section>
     </section>
 
-    <section>
+    <section id="section-3">
         <section>
             <h2 class="shadow">My Skills</h2>
             <h1 id="skills">My Skills</h1>
@@ -318,15 +338,14 @@
         </section>
         <section class="contact-container">
             <section class="contact-timeline">
-                <form>
+                <form onsubmit="sendEMail(); reset(); return false;">
                     <section class="contact-name-and-number">
-                        <input type="text" id="contact-name" placeholder="Your Name" required>
-                        <input type="text" id="contact-number" placeholder="Your Phone Number" required>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="text" id="phone" placeholder="Your Phone Number" required>
                     </section>
                     <section class="contact-others-inputs">
-                        <input type="email" id="contact-email" placeholder="Email" required>
-                        <input type="text" id="contact-subject" placeholder="Subject" required>
-                        <textarea id="contact-message" rows="12" placeholder="How can i help you ?"></textarea>
+                        <input type="email" id="email" placeholder="Email" required>
+                        <textarea id="message" rows="12" placeholder="How can i help you ?"></textarea>
                         <button type="submit">Send message</button>
                     </section>
                 </form>
@@ -366,6 +385,26 @@
 
 </footer>
 
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/readMore.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEMail() {
+        Email.send({
+            SecureToken:"08c3e6c8-1c54-40d8-ac7c-4ef104b710aa",
+
+            To: 'isurupersonal9924@gmail.com',
+            From: document.getElementById("email").value,
+            Subject: "New Contact Form Enquiry",
+            Body: "Name : " + document.getElementById("name").value
+                +"<br> Email : "+document.getElementById("email").value
+                +"<br> Phone no : "+document.getElementById("phone").value
+                +"<br> Message Content : "+document.getElementById("message").value
+        }).then(
+            message => alert("Message Sent Successfully")
+        );
+    }
+</script>
 
 </body>
 

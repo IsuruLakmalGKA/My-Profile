@@ -39,9 +39,11 @@ header {
     bottom: 0;
     right: 0;
     margin: auto;
+    max-width: 1500px;
     background-size: cover;
     display: flex;
 }
+
 
 .dynamic-static-icon-btns-sec {
     margin-left: 45%;
@@ -56,6 +58,114 @@ header {
     padding-right: 35px;
     padding-left: 35px;
 
+}
+
+header > nav > .nav-links {
+    display: none;
+}
+
+header > nav > .btn-nav {
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    user-select: none;
+
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    /*background-color: white;*/
+    top: 15px;
+    left: 23px;
+}
+
+header > nav > .btn-nav > span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background-color: white;
+    border-radius: 6px;
+    z-index: 1;
+
+    transform-origin: 0 0;
+    transition: 0.4s;
+}
+
+header > nav > .btn-nav:hover span:nth-child(2) {
+    transform: translateX(10px);
+    background-color: yellow;
+}
+
+.btn-nav.is-active span:nth-child(1) {
+    transform: translate(0px, -2px) rotate(45deg);
+}
+
+.btn-nav.is-active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(15px);
+}
+
+.btn-nav.is-active span:nth-child(3) {
+    transform: translate(-3px, 3px) rotate(-45deg);
+}
+
+header > nav > .btn-nav.is-active:hover span {
+    background-color: yellow;
+}
+
+@media (min-width: 1150px) {
+    header > nav > .btn-nav {
+        display: none;
+    }
+
+    header > nav > .nav-links {
+        display: block;
+    }
+
+
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 60px;
+    right: 100%;
+    width: 40%;
+    min-height: 100vh;
+    display: block;
+    z-index: 98;
+    background-color: #1c1c1c;
+    padding-top: 70px;
+    transition: 0.75s;
+}
+
+.mobile-nav.is-active{
+    left: 0;
+}
+
+.mobile-nav > a {
+
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px;
+    text-align: center;
+    padding: 12px 16px;
+    background-color: #1c1c1c;
+
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Ubuntu;
+}
+.mobile-nav > a:hover{
+    transition-duration: 0.5s;
+    background-color: yellow;
+    color: black;
 }
 
 .nav-links:active {
@@ -265,6 +375,7 @@ header {
 }
 
 .section-2 {
+    max-width: 2000px;
     margin-top: 100px;
 }
 
@@ -336,14 +447,17 @@ main > section > section > div > .my-details-ans {
     position: relative;
     width: 50%;
     bottom: 400px;
-    left: 50%;
+    left: 60%;
     height: 400px;
+    align-items: center;
+    justify-content: center;
     /*background-color: white;*/
 }
 
-.profile-picture {
+/*.profile-picture {
     margin-left: 50%;
-}
+}*/
+
 
 .download-btn > button {
     width: 200px;
@@ -375,6 +489,35 @@ main > section > section > div > .my-details-ans {
     /*background-color: white;*/
 }
 
+.read-more-sec{
+    position: relative;
+    margin-top: -500px;
+    max-width: 2000px;
+    width: 80%;
+    right: 200%;
+    border-color: red;
+    border-width: 1px;
+    color: white;
+    font-family: Ubuntu;
+    font-size: 17px;
+    transition: 1s;
+}
+.read-more-sec.is-active{
+    right: 0;
+}
+
+#read-more.is-active{
+    top: -700px;
+}
+
+#section-3{
+    transition: 1s;
+}
+
+#section-3.is-active{
+    margin-top: 700px;
+}
+
 .about-me-view-more-btn > button {
     width: 150px;
     height: 40px;
@@ -402,9 +545,12 @@ main > section > section > div > .my-details-ans {
 main > section > section > section > .download-btn {
     width: 200px;
     min-height: 40px;
-    margin-left: 17%;
+    margin-top: 40px;
+    align-items: center;
+    /*margin-left: 17%;*/
     /*background-color: red;*/
 }
+
 
 .wrapper-skills {
     cursor: pointer;
@@ -742,7 +888,8 @@ main > section > section > h2 {
     height: 700px;
     /*background-color: greenyellow;*/
 }
-.contact-container > .contact-timeline-button > section{
+
+.contact-container > .contact-timeline-button > section {
     position: relative;
     left: 20%;
 }
@@ -764,6 +911,7 @@ main > section > section > h2 {
     border-radius: 20px;
     filter: drop-shadow(2px 2px 10px black);
 }
+
 .contact-timeline-button > .c-t-b-callBtn:hover {
     width: 250px;
     height: 200px;
@@ -772,10 +920,12 @@ main > section > section > h2 {
     border-radius: 20px;
     filter: drop-shadow(2px 2px 10px black);
 }
-.contact-timeline-button > .c-t-b-callBtn > p{
+
+.contact-timeline-button > .c-t-b-callBtn > p {
     position: relative;
     top: 15%;
 }
+
 .contact-timeline-button > .c-t-b-callBtn > p:nth-child(1) {
     text-align: center;
     margin-top: 30px;
@@ -784,6 +934,7 @@ main > section > section > h2 {
     font-family: Ubuntu;
     font-weight: bold;
 }
+
 .contact-timeline-button > .c-t-b-callBtn > p:nth-child(2) {
     text-align: center;
     color: white;
@@ -798,6 +949,7 @@ main > section > section > h2 {
     border-radius: 20px;
     filter: drop-shadow(2px 2px 10px black);
 }
+
 .contact-timeline-button > .c-t-b-MailBtn:hover {
     width: 250px;
     height: 200px;
@@ -826,12 +978,12 @@ main > section > section > h2 {
     color: white;
     font-family: Ubuntu;
 }
-.contact-timeline-button > .c-t-b-MailBtn > img{
+
+.contact-timeline-button > .c-t-b-MailBtn > img {
     position: relative;
     left: 7%;
     bottom: 20%;
 }
-
 
 
 .contact-container > .contact-timeline {
@@ -896,27 +1048,31 @@ main > section > section > h2 {
     box-shadow: 0px 2px 8px black;
 }
 
-footer > section > hr{
+footer > section > hr {
     position: relative;
     margin: auto;
     width: 75%;
 }
-footer > section > section{
+
+footer > section > section {
     width: 100%;
     height: 450px;
     text-align: center;
 }
-footer > section > section > img{
+
+footer > section > section > img {
     display: inline-block;
     vertical-align: middle;
     border-radius: 150px;
 }
-footer > section > section > span{
+
+footer > section > section > span {
     display: inline-block;
     vertical-align: middle;
     height: 100%;
 }
-footer > section > p{
+
+footer > section > p {
     position: relative;
     text-align: center;
     font-family: Ubuntu;
@@ -924,7 +1080,8 @@ footer > section > p{
     color: white;
     margin-bottom: 100px;
 }
-footer > section > .three-Btns{
+
+footer > section > .three-Btns {
     position: fixed;
     right: 3%;
     bottom: 50%;
@@ -940,7 +1097,8 @@ footer > section > .three-Btns{
     font-size: 22px;
     font-weight: bolder;
 }
-footer > section > .gotoUp{
+
+footer > section > .gotoUp {
     position: fixed;
     right: 3%;
     bottom: 5%;
@@ -956,6 +1114,7 @@ footer > section > .gotoUp{
     font-size: 22px;
     font-weight: bolder;
 }
+
 /*h1 {
     position: relative;
     font-family: "Source Code Pro";
