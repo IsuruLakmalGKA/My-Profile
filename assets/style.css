@@ -20,6 +20,10 @@
     border-radius: 20px;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 header {
     position: fixed;
     z-index: 1;
@@ -32,7 +36,6 @@ header {
 }
 
 .section-1 {
-    background-image: url("image/back.png");
     background-position: center;
     height: 700px;
     top: 0;
@@ -40,9 +43,16 @@ header {
     bottom: 0;
     right: 0;
     margin: auto;
-    max-width: 1500px;
+    max-width: 1311px;
     background-size: cover;
     display: flex;
+}
+
+.section-1 > img{
+    position: relative;
+    width: 1920px;
+    right: 80%;
+    z-index: -1;
 }
 
 
@@ -144,7 +154,7 @@ header > nav > .btn-nav.is-active:hover span {
     transition: 0.75s;
 }
 
-.mobile-nav.is-active{
+.mobile-nav.is-active {
     left: 0;
 }
 
@@ -163,7 +173,8 @@ header > nav > .btn-nav.is-active:hover span {
     font-size: 15px;
     font-family: Ubuntu;
 }
-.mobile-nav > a:hover{
+
+.mobile-nav > a:hover {
     transition-duration: 0.5s;
     background-color: yellow;
     color: black;
@@ -237,6 +248,23 @@ header > nav > .btn-nav.is-active:hover span {
     font-size: 75px;
 }
 
+@media (max-width: 1000px) and (min-width: 315px) {
+    .section-1 > img {
+        display: none;
+    }
+    .dynamic-static-icon-btns-sec{
+        position: relative;
+        margin-left: 10%;
+    }
+    .static-txt-1{
+        font-size: 40px;
+    }
+    .static-txt-2{
+        font-size: 40px;
+    }
+
+}
+
 .section-1 {
     color: #f2ff00;
 }
@@ -251,9 +279,9 @@ header > nav > .btn-nav.is-active:hover span {
     font-family: Ubuntu;
     font-weight: bold;
     margin-top: 15px;
-    font-size: 50px;
-    height: 50px;
-    line-height: 50px;
+    font-size: 30px;
+    height: 30px;
+    line-height: 30px;
     overflow: hidden;
 }
 
@@ -270,7 +298,7 @@ header > nav > .btn-nav.is-active:hover span {
 
 @keyframes slide {
     100% {
-        top: -150px;
+        top: -90px;
     }
 }
 
@@ -379,8 +407,12 @@ header > nav > .btn-nav.is-active:hover span {
     max-width: 2000px;
     margin-top: 100px;
 }
+@media (max-width: 1000px) and (min-width: 315px){
 
-main > section > section > h1 {
+}
+
+
+main > section > section > section > h1 {
     position: relative;
     font-family: Ubuntu;
     font-weight: bolder;
@@ -392,7 +424,7 @@ main > section > section > h1 {
     bottom: 30px;
 }
 
-main > section > section > h2 {
+main > section > section > section > h2 {
     position: relative;
     font-family: Ubuntu;
     font-weight: bolder;
@@ -405,27 +437,28 @@ main > section > section > h2 {
     line-height: 1px;
 }
 
-main > section > .about-pan-full {
+main > section > section > section > .about-pan-full {
     width: 50%;
     height: 600px;
-    margin: auto;
+    margin-left: 100px;
     /* background-color: darkgreen;*/
 }
 
 .my-details {
     width: 50%;
     height: 400px;
+    margin: auto;
     /*background-color: #0c63e4;*/
 }
 
-main > section > section > .my-details > h3 {
+main > section > section > section > .my-details > h3 {
     position: relative;
     font-family: "Droid Sans Mono", monospace;
     font-weight: bolder;
     text-align: left;
 }
 
-main > section > section > div > .my-details-content {
+main > section > section > section > div > .my-details-content {
     position: relative;
     font-family: "Droid Sans Mono", monospace;
     font-size: 15px;
@@ -434,7 +467,7 @@ main > section > section > div > .my-details-content {
     left: 5%;
 }
 
-main > section > section > div > .my-details-ans {
+main > section > section > section > div > .my-details-ans {
     position: relative;
     bottom: 383px;
     left: 200px;
@@ -486,16 +519,18 @@ main > section > section > div > .my-details-ans {
     width: 150px;
     height: 40px;
     bottom: 400px;
-    margin: 15%;
+    margin-left: 35%;
+    margin-top: 100px;
     /*background-color: white;*/
 }
 
-.read-more-sec{
+.read-more-sec {
     position: relative;
-    margin-top: -500px;
-    max-width: 2000px;
-    width: 80%;
-    right: 200%;
+    margin-top: -300px;
+    max-width: 700px;
+    width: 70%;
+    margin-left: 30%;
+    right: 100%;
     border-color: red;
     border-width: 1px;
     color: white;
@@ -503,20 +538,21 @@ main > section > section > div > .my-details-ans {
     font-size: 17px;
     transition: 1s;
 }
-.read-more-sec.is-active{
+
+.read-more-sec.is-active {
     right: 0;
 }
 
-#read-more.is-active{
+#read-more.is-active {
     top: -700px;
 }
 
-#section-3{
+#section-3 {
     transition: 1s;
 }
 
-#section-3.is-active{
-    margin-top: 700px;
+#section-3.is-active {
+    margin-top: 200px;
 }
 
 .about-me-view-more-btn > button {
@@ -543,7 +579,7 @@ main > section > section > div > .my-details-ans {
     border-radius: 175px;
 }
 
-main > section > section > section > .download-btn {
+main > section > section > section > section > .download-btn {
     width: 200px;
     min-height: 40px;
     margin-top: 40px;
@@ -556,7 +592,7 @@ main > section > section > section > .download-btn {
 .wrapper-skills {
     cursor: pointer;
     position: relative;
-    height: 250px;
+    height: 300px;
     width: 80%;
     max-width: 1500px;
     border: 0px solid greenyellow;
@@ -564,6 +600,7 @@ main > section > section > section > .download-btn {
     overflow: auto;
     border-radius: 30px;
     margin: auto;
+    overflow-y: hidden;
 }
 
 .wrapper-skills::-webkit-scrollbar {
@@ -647,14 +684,14 @@ main > section > section > section > .download-btn {
     filter: drop-shadow(0px 0px 1px black);
 }
 
-main > section > section > div > div > h1 {
+main > section > section > section > div > div > h1 {
     font-family: Ubuntu;
     color: white;
     margin-left: 30px;
     line-height: 30px;
 }
 
-main > section > section > div > div > p {
+main > section > section > section > div > div > p {
     font-family: "Ubuntu";
     font-size: 15px;
     color: #f0f0f0;
@@ -710,7 +747,7 @@ main > section > section > div > div > p {
     border-radius: 50px 50px 0px 0px;
 }
 
-main > section > section > div > p {
+main > section > section > section > div > p {
     font-family: Ubuntu;
     font-weight: bold;
     margin-left: 20px;
@@ -718,21 +755,21 @@ main > section > section > div > p {
     color: yellow;
 }
 
-main > section > section > div > h3 {
+main > section > section > section > div > h3 {
     margin-top: 10px;
     font-size: 23px;
     text-align: center;
     color: white;
 }
 
-main > section > .see-more-btn-out {
+main > section > section > .see-more-btn-out {
     margin: auto;
     width: 200px;
     height: 60px;
     background-color: #1c1c1c;
 }
 
-main > section > section > .see-more-btn {
+main > section > section > section > .see-more-btn {
     position: relative;
     width: 200px;
     height: 40px;
@@ -747,7 +784,7 @@ main > section > section > .see-more-btn {
     cursor: pointer;
 }
 
-main > section > section > .see-more-btn:hover {
+main > section > section > section > .see-more-btn:hover {
     transition-duration: 1s;
     color: #1c1c1c;
     background-color: yellow;
@@ -879,7 +916,7 @@ main > section > section > .see-more-btn:hover {
     filter: drop-shadow(0px 0px 7px black);
 }
 
-main > section > section > h2 {
+main > section > section > section > h2 {
     /*position: relative;*/
     margin-top: 150px;
 }
@@ -1121,6 +1158,14 @@ footer > section > .gotoUp {
     font-weight: bolder;
 }
 
+/*Load Page Animation*/
+.pageLoader{
+    opacity: 0;
+    transition: all 2s;
+}
+.show{
+    opacity: 1;
+}
 /*h1 {
     position: relative;
     font-family: "Source Code Pro";
